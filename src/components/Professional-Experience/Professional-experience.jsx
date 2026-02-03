@@ -26,7 +26,7 @@ const ProfessionalExperience = () => {
         </h2>
         <div className="w-24 h-[3px] bg-gradient-to-r from-purple-400 to-pink-500 mx-auto mt-5 rounded-full"></div>
         <p className="text-gray-400 mt-6 max-w-2xl mx-auto text-lg">
-          A refined ladder-style presentation of my professional growth.
+          A summary of my professional roles and industry-level project contributions.
         </p>
       </div>
 
