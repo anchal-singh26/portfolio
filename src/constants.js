@@ -26,7 +26,7 @@ import jobsync from './assets/company_logo/job-sync.jpg';
 import doctorPortal from './assets/company_logo/doctor-patient-logo.jpg';
 import flipkartClone from './assets/company_logo/ecomlogo.png';
 import keysoftware from './assets/company_logo/keysoftware.jpg';
-import BlueSpring from ./assets/company_logo/BlueSpring.jpeg
+import BlueSpring from './assets/company_logo/BlueSpring.jpeg';
 
 // Education Section Logo's
 import cimelogo from './assets/education_logo/cimelogo.jpg';
@@ -103,7 +103,7 @@ improving overall usability by 20%.`,
       "Node.js",
       "Express.js",
       "RESTful APIs",
-      "Redux Toolkit,"
+      "Redux Toolkit",
 	  "JavaScript",
       "Git",
       "MySQL",
