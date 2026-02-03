@@ -14,78 +14,95 @@ const ProfessionalExperience = () => {
   return (
     <section
       id="professional-experience"
-      className="py-24 px-[8vw] md:px-[6vw] lg:px-[14vw] font-sans relative bg-skills-gradient clip-path-custom-3"
+      className="py-28 px-[6vw] lg:px-[14vw] font-sans relative bg-skills-gradient clip-path-custom-3"
     >
-      {/* Section Title */}
-      <div className="text-center mb-20">
-        <h2 className="text-4xl font-bold text-white tracking-wide">
+      {/* Title */}
+      <div className="text-center mb-24">
+        <h2 className="text-4xl font-bold text-white">
           PROFESSIONAL EXPERIENCE
         </h2>
         <div className="w-28 h-1 bg-purple-500 mx-auto mt-4 rounded-full"></div>
-        <p className="text-gray-400 mt-5 text-lg max-w-2xl mx-auto">
-          A snapshot of my professional journey, responsibilities, and real-world project contributions.
+        <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
+          My professional journey presented in a modern ladder-style layout.
         </p>
       </div>
 
-      {/* Experience List */}
-      <div className="flex flex-col gap-12">
-        {professionalExperience.map((exp) => (
-          <div
-            key={exp.id}
-            className="group grid grid-cols-1 md:grid-cols-[220px_1fr] bg-[#0f0b1e]/80 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-purple-500/30 transition-all duration-300"
-          >
-            {/* Left Logo Section */}
-            <div className="flex items-center justify-center bg-[#140f2b] p-6">
-              <img
-                src={exp.img}
-                alt={exp.company}
-                className="w-full h-auto max-h-28 object-contain"
-              />
-            </div>
+      {/* Ladder Container */}
+      <div className="relative">
+        {/* Center Line */}
+        <div className="absolute left-1/2 top-0 h-full w-[2px] bg-purple-500/30 -translate-x-1/2"></div>
 
-            {/* Right Content Section */}
-            <div className="p-8">
-              {/* Header */}
-              <div className="mb-4">
-                <h3 className="text-2xl font-bold text-white mb-1">
-                  {exp.role}
-                </h3>
-                <p className="text-purple-400 font-semibold">
-                  {exp.company}
-                </p>
-                <p className="text-sm text-gray-500 mt-1">
-                  {exp.date} • {exp.location}
-                </p>
-              </div>
+        {/* Experience Items */}
+        <div className="flex flex-col gap-20">
+          {professionalExperience.map((exp, index) => {
+            const isLeft = index % 2 === 0;
 
-              {/* Description */}
-              <p className="text-gray-400 text-justify leading-relaxed mb-3">
-                {expanded[exp.id]
-                  ? exp.desc
-                  : `${exp.desc.slice(0, 220)}...`}
-              </p>
-
-              <button
-                onClick={() => toggleReadMore(exp.id)}
-                className="text-sm text-purple-400 hover:text-purple-300 underline underline-offset-4 transition"
+            return (
+              <div
+                key={exp.id}
+                className={`relative flex flex-col md:flex-row ${
+                  isLeft ? 'md:justify-start' : 'md:justify-end'
+                }`}
               >
-                {expanded[exp.id] ? 'Read Less' : 'Read More'}
-              </button>
+                {/* Dot */}
+                <div className="absolute left-1/2 top-10 w-5 h-5 bg-purple-500 rounded-full -translate-x-1/2 z-10 shadow-lg"></div>
 
-              {/* Skills */}
-              <div className="flex flex-wrap gap-2 mt-6">
-                {exp.skills.map((skill, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1 text-xs font-semibold rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20"
+                {/* Card */}
+                <div
+                  className={`w-full md:w-[46%] bg-[#0f0b1e]/80 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl p-8 transition-all duration-300 hover:shadow-purple-500/40 ${
+                    isLeft ? 'md:mr-auto' : 'md:ml-auto'
+                  }`}
+                >
+                  {/* Logo */}
+                  <div className="flex justify-center mb-6">
+                    <img
+                      src={exp.img}
+                      alt={exp.company}
+                      className="max-h-20 object-contain"
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-2xl font-bold text-white mb-1">
+                    {exp.role}
+                  </h3>
+                  <p className="text-purple-400 font-semibold">
+                    {exp.company}
+                  </p>
+                  <p className="text-sm text-gray-500 mb-4">
+                    {exp.date} • {exp.location}
+                  </p>
+
+                  {/* Description */}
+                  <p className="text-gray-400 text-justify leading-relaxed mb-3">
+                    {expanded[exp.id]
+                      ? exp.desc
+                      : `${exp.desc.slice(0, 220)}...`}
+                  </p>
+
+                  <button
+                    onClick={() => toggleReadMore(exp.id)}
+                    className="text-sm text-purple-400 underline underline-offset-4 hover:text-purple-300"
                   >
-                    {skill}
-                  </span>
-                ))}
+                    {expanded[exp.id] ? 'Read Less' : 'Read More'}
+                  </button>
+
+                  {/* Skills */}
+                  <div className="flex flex-wrap gap-2 mt-6">
+                    {exp.skills.map((skill, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 text-xs rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
+            );
+          })}
+        </div>
       </div>
     </section>
   );
