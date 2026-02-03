@@ -228,8 +228,40 @@ improving overall usability by 20%.`,
 
 ];
 export const professionalExperience = [
-  {
+	    {
     id: 1,
+    img: BlueSpring,
+    role: "Software Engineer",
+    company: "BlueSprings Innovations Pvt. Ltd.",",
+    date: "January 2025 · Full-Time",
+    location: "Hyderabad, Telangana, India",
+    desc: `Designed, developed, and maintained scalable React.js components, delivering responsive and
+intuitive user interfaces across enterprise modules.Integrated RESTful APIs with frontend applications, improving data consistency and application
+stability.Contributed to the migration of backend services from Java to Node.js, supporting API-wise and
+module-wise transitions and improving long-term maintainability.Optimized routing and navigation flows, reducing navigation-related issues and improving overall
+usability.Implemented Role-Based Access Control (RBAC) to enforce secure access policies, reducing
+unauthorized access.Actively participated in code reviews, debugging, and optimization, contributing to a 15–20%
+improvement in overall code quality.`,
+    skills: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MySQL",
+      "REST APIs",
+      "JavaScript",
+      "HTML5",
+      "CSS",
+      "Redux Toolkit",
+      "jQuery",
+      "AJAX",
+      "Firebase",
+      "SQL",
+      "Git",
+      "Agile"
+    ],
+  },
+  {
+    id: 2,
     img: nareshLogo,
     role: "MERN Stack Intern",
     company: "Naresh i Technologies",
@@ -255,7 +287,7 @@ export const professionalExperience = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     img: keysoftware,
      role: 'Software Engineer',
   company: 'Key Software Services Pvt. Ltd.',
