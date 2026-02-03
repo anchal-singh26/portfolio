@@ -26,6 +26,7 @@ import jobsync from './assets/company_logo/job-sync.jpg';
 import doctorPortal from './assets/company_logo/doctor-patient-logo.jpg';
 import flipkartClone from './assets/company_logo/ecomlogo.png';
 import keysoftware from './assets/company_logo/keysoftware.jpg';
+import BlueSpring from ./assets/company_logo/BlueSpring.jpeg
 
 // Education Section Logo's
 import cimelogo from './assets/education_logo/cimelogo.jpg';
@@ -83,9 +84,33 @@ export const SkillsInfo = [
 ];
 
 export const experiences = [
-
   {
     id: 1,
+    img: BlueSpring,
+    role: "Aurum Impex – Procurement Management System",
+    company: "BlueSprings Innovations Pvt. Ltd.",
+    date: "January 2025",
+    desc: `Developed a full-scale enterprise procurement system using React.js and Node.js, covering
+RFQs, Quotes, Purchase Orders, and User Management modules.Migrated backend services from Java-based APIs to Node.js, ensuring feature parity, database
+consistency, and improved maintainability.Integrated frontend and backend APIs to enable end-to-end data flow, reducing manual
+intervention and improving operational efficiency.Applied Redux-based state management to handle complex workflows and improve application
+scalability.Enhanced UI/UX and navigation flows by resolving routing issues and optimizing layouts,
+improving overall usability by 20%.`,
+    skills: [
+      "React.js",
+      "Redux Toolkit",
+      "Firebase Cloud Messaging (FCM)",
+      "Node.js",
+      "Express.js",
+      "RESTful APIs",
+      "Redux Toolkit,"
+	  "JavaScript",
+      "Git",
+      "MySQL",
+    ],
+  },
+  {
+    id: 2,
     img: keysoftware,
     role: "Sense of Space App",
     company: "Key Software Services Pvt. Ltd.",
@@ -103,7 +128,7 @@ export const experiences = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     img: keysoftware,
     role: "Employee Management System",
     company: "Key Software Services Pvt. Ltd.",
@@ -120,7 +145,7 @@ export const experiences = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     img: doctorPortal,
     role: "Doctor-Patient Portal",
     company: "Academic Final Year Project",
@@ -139,7 +164,7 @@ export const experiences = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     img: Ecommerceproj,
     role: "E-Commerce Web Application",
     company: "Personal Project (Naresh i Technologies Association)",
@@ -157,7 +182,7 @@ export const experiences = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     img: jobsync,
     role: "Job Sync Portal",
     company: "Group Project (Naresh i Technologies Association)",
@@ -180,7 +205,7 @@ export const experiences = [
   },
 
   {
-    id: 6,
+    id: 7,
     img: flipkartClone,
     role: "Flipkart Clone",
     company: "Personal Project",
