@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import nareshLogo from '../../assets/Professionalexp-logo/naresh_i_technologies_logo.jpg';
-import keysoftwareLogo from '../../assets/company_logo/keysoftware.jpg';
 import { professionalExperience } from '../../constants';
 
 const ProfessionalExperience = () => {
@@ -16,57 +14,70 @@ const ProfessionalExperience = () => {
   return (
     <section
       id="professional-experience"
-      className="py-24 px-[12vw] md:px-[7vw] lg:px-[20vw] font-sans relative bg-skills-gradient clip-path-custom-3"
+      className="py-24 px-[8vw] md:px-[6vw] lg:px-[14vw] font-sans relative bg-skills-gradient clip-path-custom-3"
     >
       {/* Section Title */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-white">PROFESSIONAL EXPERIENCE</h2>
-        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className="text-gray-400 mt-4 text-lg font-semibold max-w-2xl mx-auto text-justify">
-          A summary of my professional roles and industry-level project contributions.
+      <div className="text-center mb-20">
+        <h2 className="text-4xl font-bold text-white tracking-wide">
+          PROFESSIONAL EXPERIENCE
+        </h2>
+        <div className="w-28 h-1 bg-purple-500 mx-auto mt-4 rounded-full"></div>
+        <p className="text-gray-400 mt-5 text-lg max-w-2xl mx-auto">
+          A snapshot of my professional journey, responsibilities, and real-world project contributions.
         </p>
       </div>
 
-      {/* Experience Cards */}
-      <div className="grid gap-12 grid-cols-1 md:grid-cols-2">
+      {/* Experience List */}
+      <div className="flex flex-col gap-12">
         {professionalExperience.map((exp) => (
           <div
             key={exp.id}
-            className="border border-white bg-gray-900 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden hover:shadow-purple-500/50 hover:-translate-y-2 transition-transform duration-300"
+            className="group grid grid-cols-1 md:grid-cols-[220px_1fr] bg-[#0f0b1e]/80 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-purple-500/30 transition-all duration-300"
           >
-            <div className="p-4 flex justify-center items-center h-48">
+            {/* Left Logo Section */}
+            <div className="flex items-center justify-center bg-[#140f2b] p-6">
               <img
                 src={exp.img}
                 alt={exp.company}
-                className="w-full h-full object-contain rounded-xl"
+                className="w-full h-auto max-h-28 object-contain"
               />
             </div>
 
-            <div className="p-6">
-              <h3 className="text-2xl font-bold text-white mb-1">{exp.role}</h3>
-              <p className="text-gray-500 text-lg mb-1">{exp.company}</p>
-              <p className="text-gray-500 text-sm mb-1">{exp.date}</p>
-              <p className="text-gray-500 text-sm mb-4">{exp.location}</p>
+            {/* Right Content Section */}
+            <div className="p-8">
+              {/* Header */}
+              <div className="mb-4">
+                <h3 className="text-2xl font-bold text-white mb-1">
+                  {exp.role}
+                </h3>
+                <p className="text-purple-400 font-semibold">
+                  {exp.company}
+                </p>
+                <p className="text-sm text-gray-500 mt-1">
+                  {exp.date} • {exp.location}
+                </p>
+              </div>
 
-              {/* Read More Description */}
-              <p className="text-gray-400 mb-2 text-justify">
+              {/* Description */}
+              <p className="text-gray-400 text-justify leading-relaxed mb-3">
                 {expanded[exp.id]
                   ? exp.desc
-                  : `${exp.desc.slice(0, 180)}...`}
+                  : `${exp.desc.slice(0, 220)}...`}
               </p>
+
               <button
                 onClick={() => toggleReadMore(exp.id)}
-                className="text-sm text-purple-400 underline focus:outline-none"
+                className="text-sm text-purple-400 hover:text-purple-300 underline underline-offset-4 transition"
               >
                 {expanded[exp.id] ? 'Read Less' : 'Read More'}
               </button>
 
               {/* Skills */}
-              <div className="flex flex-wrap gap-2 mt-4">
+              <div className="flex flex-wrap gap-2 mt-6">
                 {exp.skills.map((skill, index) => (
                   <span
                     key={index}
-                    className="inline-block bg-[#251f38] text-xs font-semibold text-purple-500 rounded-full px-2 py-1"
+                    className="px-3 py-1 text-xs font-semibold rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20"
                   >
                     {skill}
                   </span>
